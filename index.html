@@ -3,12 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hillfe & Get a Handy</title>
+  <title data-i18n="html_title">Hillfe & Get a Handy</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-   <div class="lang-switcher">
-    <label for="language">Language:</label>
+
+  <!-- Language Switcher -->
+  <div class="lang-switcher">
+    <label for="language" data-i18n="label_language">Language:</label>
     <select id="language">
       <option value="en">English</option>
       <option value="de">Deutsch</option>
@@ -17,34 +19,43 @@
     </select>
   </div>
 
+  <!-- Header -->
   <header>
-    <h1>Hillfe & Get a Handy</h1>
-    <p class="tagline">Jobs, dignity, and a connection — for Berliners in need.</p>
+    <h1 data-i18n="site_title">Hillfe & Get a Handy</h1>
+    <p class="tagline" data-i18n="tagline">Jobs, dignity, and a connection — for Berliners in need.</p>
   </header>
 
+  <!-- Main CTA Section -->
   <main>
     <section class="intro">
-      <h2>What We Do</h2>
-      <p>We connect people without homes or stable work with quick jobs in homes and local cafes — and we provide a phone and SIM card so they can stay connected.</p>
-    </section>
+      <h2 data-i18n="section_what_we_do">What We Do</h2>
+      <p data-i18n="description">
+        We connect people without homes or stable work with quick jobs in homes and local cafes — and we provide a phone and SIM card so they can stay connected.
+      </p>
 
-    <section class="action-buttons">
-      <a href="#" class="btn">Need a Handy + Work</a>
-      <a href="#" class="btn alt">Offer a Job</a>
+      <div class="cta-buttons">
+        <a href="#" class="btn" data-i18n="btn_get_help">Need a Handy + Work</a>
+        <a href="#" class="btn alt" data-i18n="btn_offer_job">Offer a Job</a>
+      </div>
     </section>
 
     <section class="how-it-works">
-      <h2>How It Works</h2>
+      <h2 data-i18n="how_it_works">How It Works</h2>
       <ol>
-        <li>Tell us what you need (or what help you can offer).</li>
-        <li>We match helpers with jobs — fast and local.</li>
-        <li>Everyone gets a phone to stay in the loop.</li>
+        <li data-i18n="step1">Tell us what you need (or what help you can offer).</li>
+        <li data-i18n="step2">We match helpers with jobs — fast and local.</li>
+        <li data-i18n="step3">Everyone gets a phone to stay in the loop.</li>
       </ol>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer>
-    <p>Made with care in Berlin. &copy; 2025 Hillfe & Get a Handy</p>
+    <p data-i18n="footer">&copy; 2025 Hillfe & Get a Handy. Made with care in Berlin.</p>
   </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/i18next@21.6.3/dist/umd/i18next.min.js"></script>
+  <script src="i18n-init.js"></script>
 </body>
 </html>
