@@ -88,3 +88,31 @@ document.getElementById('language').addEventListener('change', (e) => {
   const selectedLang = e.target.value;
   i18next.changeLanguage(selectedLang, updateContent);
 });
+// Include the i18next backend plugin
+i18next
+  .use(i18nextHttpBackend) // Use the HTTP backend to load translations
+  .init({
+    backend: {
+      // Path to your translation files
+      loadPath: '/locales/{{lng}}.json' 
+    },
+    lng: 'en', // Default language
+    fallbackLng: 'en', // Fallback language if translation is missing
+    debug: true // Enable debug mode to see logs in the console
+  }, function(err, t) {
+    // Initial translation
+    updateContent();
+  });
+
+function updateContent() {
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    el.textContent = i18next.t(key);
+  });
+}
+
+// Language switcher
+document.getElementById('language').addEventListener('change', (e) => {
+  const selectedLang = e.target.value;
+  i18next.changeLanguage(selectedLang, updateContent);
+});
